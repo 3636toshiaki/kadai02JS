@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="memo_3.css" />
+    <title>Note App</title>
+</head>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+      
+    <div class="container">
+    <header class="page_header">
+
+            
+            <!-- <div class="item"> -->
+                <h1 class = "main_message">Motivation Note </h1>
+                <h1 class = "sub_message">～書いて頭を整理しろ!～</h1>
+                <p id="today"> </p>
+            <!-- </div> -->
+
+     </header>
+    </div>
+    
+           <!-- ここからaudio -->
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+      
+         <h1 class="audio_mpeg">
+             <!-- <i class="fa fa-arrow-down "></i>   -->
+             <!-- <i class="fa fa-chevron-circle-down "></i>     -->
+         <audio type="audio/mpeg" src="bgm.mp3" controls></audio>
+         </h1>
+       
+     
+
+         <script>
+             window.addEventListener('DOMContentLoaded', function(){
+     
+             const audioElement = document.querySelector("audio");
+     
+             audioElement.addEventListener('loadeddata', (e)=> {
+             // audioElement.muted = true;
+             audioElement.autoplay = true;
+             });
+             });
+     
+         </script>
+     
+           <!-- ここまでaudio -->
+    
+    
+
+        <!-- ADDボタン -->
+        <button class="add" id="add">
+            <i class="fas fa-plus-square"></i> ADD NOTE
+        </button>
+
+  
+
+    
+<body>
+    
+    <script>
+        //今日の日付データを変数に格納
+                //変数は"today"とする
+                var today=new Date(); 
+    
+                var year = today.getFullYear();
+                var month = today.getMonth()+1;
+                var week = today.getDay();
+                var day = today.getDate();
+    
+                var week_ja= new Array("日","月","火","水","木","金","土");
+         
+                         
+            var str = year+"年"+month+"月"+day+"日 "+week_ja[week]+"曜日";
+            document.getElementById('today').innerHTML = str ;
+            
+            cosole.log(str)            
+    
+        </script>
+
+     
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.2.2/marked.min.js"></script>
+<script src="memo_3.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    
+</body>
+</html>
+
+<!-- 参照URL -->
+<!-- https://selfnote.work/20210205/programming/create-javascript-app32/ -->
